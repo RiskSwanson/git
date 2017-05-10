@@ -27,6 +27,14 @@ public abstract class Mob extends Locatable {
 		X +=amountToMove;
 	}
 	
+	public void MoveUp (int amountToMove){
+		Z +=amountToMove;
+	}
+	
+	public void MoveDown (int amountToMove){
+		Z -=amountToMove;
+	}
+	
 	public int getHealth(){
 		return Health;
 	}

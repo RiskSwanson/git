@@ -4,20 +4,22 @@ import java.util.LinkedList;
 
 public class ChunkFactory {
 	CellFactory cellFactory = new CellFactory();
-	public Chunk createChunk (int chunkHeight, int chunkWidth, int chunkX, int chunkY){
-		int cellZ = 0;
-		Chunk myReturn = new Chunk();
+	public Chunk createChunk (int chunkDepth, int chunkWidth, int chunkHeight, int chunkX, int chunkY, int chunkZ){
 		
-		for (int yPosition = 0;yPosition<chunkHeight;yPosition++){
-			LinkedList<Cell> myRow = new LinkedList<Cell>();
-			for (int xPosition = 0;xPosition<chunkWidth;xPosition++){
-				int cellY = yPosition + chunkY;
-				int cellX = xPosition + chunkX;
-				Cell myCell = cellFactory.CreateCell(cellX,cellY,cellZ, "Soil");
-				myRow.add(myCell);
+		Chunk myReturn = new Chunk();
+		myReturn.cells = new Cell [chunkHeight][chunkDepth][chunkWidth];
+		for (int zPosition = 0;zPosition<chunkHeight;zPosition++){
+			for (int yPosition = 0;yPosition<chunkDepth;yPosition++){
+				for (int xPosition = 0;xPosition<chunkWidth;xPosition++){
+					int cellY = yPosition + chunkY;
+					int cellX = xPosition + chunkX;
+					int cellZ = zPosition + chunkZ;
+					Cell myCell = cellFactory.CreateCell(cellX,cellY,cellZ, "Soil");
+					myReturn.cells[zPosition][yPosition][xPosition] = myCell;
+				}	
 			}
-			myReturn.add(myRow);
 		}
+		
 		return myReturn;
 	}
 }

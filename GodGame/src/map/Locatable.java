@@ -18,4 +18,8 @@ public abstract class Locatable {
 	public int getY() {
 		return Y;
 	}
+	
+	public int getZ() {
+		return Z;
+	}
 }
