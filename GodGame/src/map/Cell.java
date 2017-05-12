@@ -1,8 +1,11 @@
 package map;
 
-public abstract class Cell {
-	public boolean active;
-	public Cell (int x, int y, int z){
-		active = true;
+public class Cell {
+	public enum CellType {DIRT, GRASS};
+	public boolean isActive;
+	public CellType cellType;
+	public Cell (boolean active, CellType celltype){
+		isActive = active;
+		cellType = celltype;
 	}
 }

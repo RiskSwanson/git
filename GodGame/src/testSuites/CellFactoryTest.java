@@ -10,7 +10,7 @@ import map.CellFactory;
 public class CellFactoryTest {
 
 	int z = 0;
-	
+	/*
 	@Test
 	public void CellFactory_CreateCell_CellHasCorrectX() {
 		int x = 1;
@@ -28,4 +28,5 @@ public class CellFactoryTest {
 		Cell c = cf.CreateCell(x, y, z, "Soil");
 		//assertEquals(y, c.getY());
 	}
+	*/
 }

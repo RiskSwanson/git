@@ -6,16 +6,14 @@ public class ChunkFactory {
 	CellFactory cellFactory = new CellFactory();
 	public Chunk createChunk (int chunkDepth, int chunkWidth, int chunkHeight, int chunkX, int chunkY, int chunkZ){
 		
-		Chunk myReturn = new Chunk();
-		myReturn.cells = new Cell [chunkHeight][chunkDepth][chunkWidth];
+		Chunk myReturn = new Chunk(chunkX, chunkY, chunkZ);
+		myReturn.cells = new Cell [chunkWidth][chunkDepth][chunkHeight];
 		for (int zPosition = 0;zPosition<chunkHeight;zPosition++){
 			for (int yPosition = 0;yPosition<chunkDepth;yPosition++){
 				for (int xPosition = 0;xPosition<chunkWidth;xPosition++){
-					int cellY = yPosition + chunkY;
-					int cellX = xPosition + chunkX;
-					int cellZ = zPosition + chunkZ;
-					Cell myCell = cellFactory.CreateCell(cellX,cellY,cellZ, "Soil");
-					myReturn.cells[zPosition][yPosition][xPosition] = myCell;
+					boolean active = true;
+					Cell myCell = cellFactory.CreateCell(active, Cell.CellType.DIRT);
+					myReturn.cells[xPosition][yPosition][zPosition] = myCell;
 				}	
 			}
 		}

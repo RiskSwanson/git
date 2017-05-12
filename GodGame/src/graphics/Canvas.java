@@ -18,9 +18,21 @@ class Canvas extends JComponent {
 	
 	private void drawCube(Graphics2D myGraphics2d){
 		
+		int chunkDepth = 10;
+		int chunkWidth = 20;
+		int chunkHeight = 5;
+		
 		CubeDrawer cd = new CubeDrawer();
 		ChunkFactory chunkFactory = new ChunkFactory();
-		Chunk chunk = chunkFactory.createChunk(10, 10, 10, 0, 0, 0);
+		Chunk chunk = chunkFactory.createChunk (chunkDepth, chunkWidth, chunkHeight, 0, -1, -3);
 		cd.drawCubes(myGraphics2d, chunk);
+		Chunk chunk3 = chunkFactory.createChunk(chunkDepth, chunkWidth, chunkHeight, 0, -2, -2);
+		cd.drawCubes(myGraphics2d, chunk3);
+		Chunk chunk2 = chunkFactory.createChunk(chunkDepth, chunkWidth, chunkHeight,  0, -1, -2);
+		cd.drawCubes(myGraphics2d, chunk2);
+		Chunk chunk4 = chunkFactory.createChunk(chunkDepth, chunkWidth, chunkHeight, 1, -1, -2);
+		cd.drawCubes(myGraphics2d, chunk4);
+		
+		
 	}
 }

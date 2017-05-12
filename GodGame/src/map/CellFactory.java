@@ -1,16 +1,8 @@
 package map;
 
 public class CellFactory {
-	public Cell CreateCell (int x, int y, int z, String cellType){
-		Cell myReturn;
-		switch(cellType){
-			case "Soil":
-				myReturn = new Soil(x,y,z);
-				break;
-			default:
-				myReturn = new Soil(x,y,z);
-				break;
-		}
+	public Cell CreateCell (boolean active, Cell.CellType cellType){
+		Cell myReturn = new Cell(active, cellType);
 		return myReturn;
 	}
 }
