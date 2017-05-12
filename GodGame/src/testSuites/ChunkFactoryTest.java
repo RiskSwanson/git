@@ -44,7 +44,7 @@ public class ChunkFactoryTest {
 		
 		assertEquals(expected, actual);
 	}
-
+/*
 	@Test
 	public void ChunkFactory_CreateChunk_FirstCellOfFirstRowHasCorrectX() {
 		
@@ -131,4 +131,5 @@ public class ChunkFactoryTest {
 		int actual = c.cells[h-1][d-1][w-1].getZ(); 
 		assertEquals(expected, actual);
 	}
+	*/
 }

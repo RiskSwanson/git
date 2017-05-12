@@ -1,7 +1,8 @@
 package map;
 
-public abstract class Cell extends Locatable {
+public abstract class Cell {
+	public boolean active;
 	public Cell (int x, int y, int z){
-		super(x,y,z);
+		active = true;
 	}
 }
