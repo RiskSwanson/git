@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.geom.Path2D;
 
 public class ShapeFactory {
-	public enum Shapes {TOPSIDE, LEFTSIDE, RIGHTSIDE};
+	public enum Shapes {TOPSIDE, LEFTSIDE, RIGHTSIDE, FRONTSIDE};
 	
 	public void createShape(Graphics2D graphics2d, Shapes shapeType, int w, int h, int x, int y){
 		Path2D.Double shape;
@@ -18,6 +18,9 @@ public class ShapeFactory {
 			break;
 		case RIGHTSIDE:
 			shape = new RightSide(w, h, x ,y);
+			break;
+		case FRONTSIDE:
+			shape = new FrontSide(w, h, x ,y);
 			break;
 		default:
 			shape = null;
