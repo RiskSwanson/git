@@ -3,7 +3,6 @@ package graphics;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-
 import javax.swing.JComponent;
 
 import map.Cell;
@@ -25,10 +24,7 @@ class Canvas extends JComponent {
 		int chunkHeight = 5;
 		
 		CubeDrawer cd = new CubeDrawer();
-		/*
-		cd.graphics2d = myGraphics2d;
-		cd.drawCube(40, 40, 40, 40, Color.GRAY, Color.BLACK, Color.LIGHT_GRAY, Color.DARK_GRAY);
-		*/
+		
 		ChunkFactory chunkFactory = new ChunkFactory();
 		
 		Chunk chunk = chunkFactory.createChunk (chunkDepth, chunkWidth, chunkHeight, 0, -1, -3);
@@ -40,6 +36,8 @@ class Canvas extends JComponent {
 		chunk2.cells[17][8][4].isActive = false;
 		chunk2.cells[17][9][4].isActive = false;
 		chunk2.cells[18][9][4].isActive = false;
+		
+		chunk2.cells[12][3][4].isActive = false;
 		chunk2.cells[17][9][3].isActive = false;
 		chunk2.cells[15][9][4].cellType = Cell.CellType.GRASS;
 		chunk2.cells[15][9][3].cellType = Cell.CellType.STONE;
@@ -49,7 +47,5 @@ class Canvas extends JComponent {
 		Chunk chunk4 = chunkFactory.createChunk(chunkDepth, chunkWidth, chunkHeight, 1, -1, -2);
 		cd.drawCubes(myGraphics2d, chunk4);
 		
-		//ShapeFactory sf = new ShapeFactory();
-		//sf.createShape(myGraphics2d, ShapeFactory.Shapes.TOPSIDE, 40, 40, 5, 5);
 	}
 }
